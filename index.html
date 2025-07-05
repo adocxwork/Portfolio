@@ -1,0 +1,752 @@
+<!--
+  Aditya Gupta | Portfolio
+  Modern, responsive single-page portfolio website
+  All code in this file (HTML, CSS, JS)
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Gupta | Portfolio</title>
+  <!-- Google Fonts for new modern look -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Roboto+Condensed:wght@300;700&family=Montserrat:wght@700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --primary: #FFD600;
+      --accent: #FFD600;
+      --bg: #111111;
+      --bg-glass: #111111;
+      --card-glass: #111111;
+      --text: #FFD600;
+      --muted: #FFD60099;
+      --shadow: none;
+      --glow: none;
+      --border-glass: 1.5px solid #FFD60055;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--bg);
+      min-height: 100vh;
+      color: var(--text);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Animated background blobs */
+    .bg-blobs {
+      display: none;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(40px);
+      opacity: 0.35;
+      animation: blobMove 18s infinite alternate ease-in-out;
+    }
+
+    .blob1 {
+      width: 320px;
+      height: 320px;
+      background: #9B3922;
+      left: -80px;
+      top: -60px;
+      animation-delay: 0s;
+    }
+
+    .blob2 {
+      width: 220px;
+      height: 220px;
+      background: #F2613F;
+      right: -60px;
+      top: 120px;
+      animation-delay: 4s;
+    }
+
+    .blob3 {
+      width: 200px;
+      height: 200px;
+      background: #481E14;
+      left: 60vw;
+      top: 60vh;
+      animation-delay: 8s;
+    }
+
+    @keyframes blobMove {
+      0% {
+        transform: scale(1) translateY(0) translateX(0);
+      }
+
+      100% {
+        transform: scale(1.2) translateY(40px) translateX(30px);
+      }
+    }
+
+    /* Glassy, compact Navbar */
+    header {
+      background: none;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+      box-shadow: none;
+    }
+
+    .navbar {
+      background: rgba(17, 17, 17, 0.97);
+      /* solid black, nearly opaque */
+      box-shadow: none;
+      border: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0.4rem 1.2rem;
+      margin-top: 0.7rem;
+      width: min(600px, 92vw);
+      min-height: 44px;
+      border-radius: 32px;
+    }
+
+    /* Remove brand from navbar */
+    .brand {
+      display: none;
+    }
+
+    /* Centered name at top of main */
+    .main-brand {
+      display: block;
+      width: 100%;
+      text-align: center;
+      font-family: 'Montserrat', 'Roboto Condensed', 'Roboto', Arial, sans-serif;
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 2px;
+      margin: 2.2rem 0 1.2rem 0;
+      text-shadow: none;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 600px) {
+      .main-brand {
+        font-size: 1.5rem;
+        margin: 1.2rem 0 0.7rem 0;
+      }
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      justify-content: center;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
+      font-size: 1.01rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      position: relative;
+      padding: 0.1rem 0.3rem;
+      transition: color 0.2s;
+    }
+
+    nav a.active,
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    nav a::after {
+      content: '';
+      display: block;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+      width: 0%;
+      transition: width 0.3s cubic-bezier(.4, 2, .6, 1);
+      margin: 0 auto;
+    }
+
+    nav a.active::after,
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      margin-left: 1.2rem;
+      z-index: 101;
+    }
+
+    .nav-toggle span {
+      height: 2px;
+      width: 22px;
+      background: var(--primary);
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: row;
+        padding: 0.3rem 0.5rem;
+        width: 99vw;
+        gap: 0.5rem;
+      }
+
+      nav {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100vw;
+        background: var(--bg-glass);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.1rem;
+        padding: 1.5rem 0 1.2rem 0;
+        border-radius: 0 0 16px 16px;
+        box-shadow: 0 4px 16px 0 #9b392222;
+        z-index: 100;
+      }
+
+      nav.open {
+        display: flex;
+        animation: navDrop 0.4s cubic-bezier(.4, 2, .6, 1);
+      }
+
+      @keyframes navDrop {
+        0% {
+          opacity: 0;
+          transform: translateY(-30px);
+        }
+
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2.2rem auto 0 auto;
+      padding: 0 1.2rem 2rem 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    section {
+      background: var(--card-glass);
+      color: var(--text);
+      border-radius: 14px;
+      box-shadow: none;
+      border: var(--border-glass);
+      padding: 2.1rem 1.5rem;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+      will-change: opacity, transform;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.25s;
+      --card-gradient-x: 50%;
+      --card-gradient-y: 50%;
+      background: var(--card-glass);
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      transition: opacity 0.7s cubic-bezier(.4, 2, .6, 1), transform 0.7s cubic-bezier(.4, 2, .6, 1);
+    }
+
+    section.card-hover {
+      background: radial-gradient(circle at var(--card-gradient-x, 50%) var(--card-gradient-y, 50%), rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 60%, transparent 100%) !important;
+      transition: background 0.18s;
+    }
+
+    /* Headings use Montserrat */
+    section h2 {
+      font-family: 'Montserrat', 'Roboto Condensed', Arial, sans-serif;
+      color: var(--primary);
+      margin-top: 0;
+      margin-bottom: 1.2rem;
+      font-size: 2rem;
+      letter-spacing: 1px;
+      text-shadow: none;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    section p,
+    section li,
+    section span,
+    section ul,
+    section div {
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 300;
+      color: var(--text);
+      font-size: 1.05rem;
+    }
+
+    .project-title,
+    .skill-cat,
+    .edu-degree {
+      font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.5px;
+    }
+
+    .project-link {
+      color: var(--primary);
+      text-decoration: none;
+      margin-left: 0.5rem;
+      font-size: 1.05rem;
+      text-shadow: none;
+      font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
+      font-weight: 400;
+      transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+      background: transparent;
+      border-radius: 0;
+    }
+
+    .project-link:hover {
+      box-shadow: 0 2px 8px #FFD60088;
+      color: #111;
+      background: var(--primary);
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.2rem;
+      background: transparent;
+      box-shadow: none;
+      border-radius: 12px;
+      padding: 1.2rem 0.7rem;
+      margin-top: 1.2rem;
+    }
+
+    .skill-cat {
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+      text-shadow: none;
+      font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
+    }
+
+    .skill-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .skill-list li {
+      color: var(--text);
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 300;
+    }
+
+    .ach-list {
+      list-style: disc inside;
+      margin: 0;
+      padding-left: 1.1rem;
+      font-size: 1.08rem;
+      color: var(--text);
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 300;
+    }
+
+    .contact-info {
+      margin-bottom: 1.2rem;
+    }
+
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      word-break: break-all;
+      font-family: 'Roboto', Arial, sans-serif;
+      font-weight: 400;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .socials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.1rem;
+      margin-top: 1.2rem;
+      margin-bottom: 0.5rem;
+      z-index: 1;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .social-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      color: var(--text);
+      box-shadow: none;
+      border: 1.5px solid #FFD60055;
+      transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+      border-radius: 12px;
+      padding: 1.1rem 0.5rem 0.7rem 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.08rem;
+      position: relative;
+      will-change: transform, box-shadow;
+      perspective: 400px;
+    }
+
+    .social-tile img {
+      width: 38px;
+      height: 38px;
+      margin-bottom: 0.7rem;
+      filter: drop-shadow(0 0 8px #f2613f55);
+      border-radius: 8px;
+      background: #fff;
+      object-fit: contain;
+      padding: 4px;
+      transition: filter 0.22s, background 0.22s;
+    }
+
+    .social-tile span {
+      margin-top: 0.2rem;
+      color: var(--primary);
+      font-family: 'Roboto Condensed', 'Roboto', Arial, sans-serif;
+      font-size: 1.01rem;
+      letter-spacing: 0.5px;
+      text-shadow: none;
+    }
+
+    .social-tile:hover {
+      background: var(--primary);
+      color: #111;
+      box-shadow: 0 4px 24px #FFD60088;
+      border-color: #FFD600;
+    }
+
+    .social-tile:hover span {
+      color: #111;
+    }
+
+    .social-tile:hover img {
+      filter: drop-shadow(0 0 16px #FFD600);
+      background: #FFD600;
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 0.7rem 0.2rem;
+        background: var(--bg-glass);
+      }
+
+      main {
+        padding: 0 0.2rem 2rem 0.2rem;
+      }
+
+      .skills-grid,
+      .socials-grid {
+        background: var(--bg-glass);
+      }
+
+      .socials-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.5rem;
+      }
+
+      .social-tile {
+        padding: 0.5rem 0.1rem 0.3rem 0.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-blobs">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <!-- Centered Name -->
+  <div class="main-brand">Aditya Gupta</div>
+  <!-- Header & Navigation -->
+  <header>
+    <div class="navbar">
+      <nav id="navbarNav">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-toggle" id="navToggle" aria-label="Open navigation" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- About Me -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm Aditya Gupta, a passionate and hardworking college student currently pursuing B.Tech in Computer Science
+        at Jaypee University of Engineering and Technology, Guna. I have a keen interest in frontend development, data
+        structures, and core CS fundamentals. My goal is to become a skilled full-stack developer, building impactful
+        and efficient software solutions.
+      </p>
+    </section>
+    <!-- Education -->
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="edu-list">
+        <li>
+          <span class="edu-degree">B.Tech in Computer Science</span> (2023–Present)<br>
+          <span class="edu-inst">Jaypee University of Engineering and Technology, Guna</span>
+        </li>
+        <li>
+          <span class="edu-degree">High School</span> (2019–2023)<br>
+          <span class="edu-inst">Shivbrat Singh Children Academy, Jaunpur</span>
+        </li>
+      </ul>
+    </section>
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li>
+          <span class="project-title">Bakery Management System</span>:
+          <span class="project-desc">A Python CLI app using file-based data storage.</span>
+          <a class="project-link" href="https://github.com/adocxwork/BakeryManagementSystem" target="_blank"
+            rel="noopener">GitHub <i class="fa-brands fa-github"></i></a>
+        </li>
+        <li>
+          <span class="project-title">Netflix Clone</span>:
+          <span class="project-desc">A static website created using HTML and CSS to practice frontend
+            development.</span>
+        </li>
+      </ul>
+    </section>
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <div class="skill-cat">Frontend</div>
+          <ul class="skill-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-cat">Languages</div>
+          <ul class="skill-list">
+            <li>C</li>
+            <li>C++</li>
+            <li>Java</li>
+            <li>Python</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-cat">Database</div>
+          <ul class="skill-list">
+            <li>MySQL</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-cat">Version Control</div>
+          <ul class="skill-list">
+            <li>Git</li>
+            <li>GitHub</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-cat">Tools</div>
+          <ul class="skill-list">
+            <li>VS Code</li>
+            <li>Cursor</li>
+          </ul>
+        </div>
+        <div>
+          <div class="skill-cat">Core CS Concepts</div>
+          <ul class="skill-list">
+            <li>DSA</li>
+            <li>OOP</li>
+            <li>DBMS</li>
+            <li>CN</li>
+            <li>OS</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- Achievements -->
+    <section id="achievements">
+      <h2>Achievements</h2>
+      <ul class="ach-list">
+        <li>Solved 300+ questions on Leetcode</li>
+      </ul>
+    </section>
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-info">
+        <div><strong>Email:</strong> <a href="mailto:adityagupta.ac@gmail.com">adityagupta.ac@gmail.com</a></div>
+        <div><strong>Address:</strong> Jaunpur, Uttar Pradesh, India</div>
+      </div>
+      <div class="socials-grid">
+        <a href="https://github.com/adocxwork" target="_blank" aria-label="GitHub" class="social-tile">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+          <span>GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/aditya-gupta-0b7b2b2a0/" target="_blank" aria-label="LinkedIn"
+          class="social-tile">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" />
+          <span>LinkedIn</span>
+        </a>
+        <a href="https://x.com/adocxwork" target="_blank" aria-label="X" class="social-tile">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg"
+            alt="X (Twitter)" />
+          <span>X (Twitter)</span>
+        </a>
+        <a href="https://leetcode.com/adocxwork/" target="_blank" aria-label="LeetCode" class="social-tile">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png" alt="LeetCode" />
+          <span>LeetCode</span>
+        </a>
+        <a href="https://www.codechef.com/users/adocxwork" target="_blank" aria-label="CodeChef" class="social-tile">
+          <img src="https://cdn.codechef.com/images/cc-logo.svg" alt="CodeChef" />
+          <span>CodeChef</span>
+        </a>
+        <a href="https://auth.geeksforgeeks.org/user/adocxwork/practice/" target="_blank" aria-label="GFG"
+          class="social-tile">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/4/43/GeeksforGeeks.svg" alt="GeeksforGeeks" />
+          <span>GeeksforGeeks</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <!-- JavaScript for interactivity -->
+  <script>
+    // Navbar toggle for mobile
+    const navToggle = document.getElementById('navToggle');
+    const navbarNav = document.getElementById('navbarNav');
+    navToggle.addEventListener('click', () => {
+      navbarNav.classList.toggle('open');
+    });
+    navToggle.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        navbarNav.classList.toggle('open');
+      }
+    });
+    // Close nav on link click (mobile)
+    Array.from(navbarNav.querySelectorAll('a')).forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 800) {
+          navbarNav.classList.remove('open');
+        }
+      });
+    });
+    // Smooth scroll and active nav link
+    const navLinks = navbarNav.querySelectorAll('a');
+    function setActiveLink() {
+      let fromTop = window.scrollY + 80;
+      navLinks.forEach(link => {
+        const section = document.querySelector(link.getAttribute('href'));
+        if (
+          section.offsetTop <= fromTop &&
+          section.offsetTop + section.offsetHeight > fromTop
+        ) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+    window.addEventListener('scroll', setActiveLink);
+    window.addEventListener('load', setActiveLink);
+    // Section reveal animation
+    const sections = document.querySelectorAll('main section');
+    const revealSection = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+    const sectionObserver = new IntersectionObserver(revealSection, {
+      threshold: 0.15
+    });
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+    // Card hover gradient effect
+    sections.forEach(section => {
+      section.addEventListener('mousemove', (e) => {
+        const rect = section.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        section.style.setProperty('--card-gradient-x', `${x}%`);
+        section.style.setProperty('--card-gradient-y', `${y}%`);
+        section.classList.add('card-hover');
+      });
+      section.addEventListener('mouseleave', () => {
+        section.classList.remove('card-hover');
+      });
+    });
+    // Scroll-to-top button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+
+</html>
