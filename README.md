@@ -1,16 +1,31 @@
-# React + Vite
+# Aditya Gupta
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+**Backend Engineer | Java & Spring Boot | Data Structures & Algorithms**
 
-Currently, two official plugins are available:
+📍 Varanasi, Uttar Pradesh, India  
+📞 +91 7974434364  
+✉️ [adityagupta.ac@gmail.com](mailto:adityagupta.ac@gmail.com)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Profile Summary
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Computer Science & Engineering student with strong expertise in **Backend Development**, **Spring Boot**, **REST APIs**, **Database Design**, and **Data Structures & Algorithms**.
 
-## Expanding the Oxlint configuration
+Experienced in building scalable backend systems, production-ready REST APIs, full-stack web applications, command-line developer tools, and AI-oriented backend architectures. Passionate about software engineering, distributed systems, backend architecture, and solving complex algorithmic problems.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## Contact & Profiles
+
+*   **Email:** [adityagupta.ac@gmail.com](mailto:adityagupta.ac@gmail.com)
+*   **LinkedIn:** [https://www.linkedin.com/in/adocxwork/](https://www.linkedin.com/in/adocxwork/)
+*   **GitHub:** [https://github.com/adocxwork](https://github.com/adocxwork)
+*   **X (Twitter):** [https://x.com/adocxwork](https://x.com/adocxwork)
+*   **Portfolio Site:** [https://adocxwork.github.io/Portfolio/](https://adocxwork.github.io/Portfolio/)
+
+### Competitive Programming
+*   **LeetCode:** [https://leetcode.com/u/adocxwork](https://leetcode.com/u/adocxwork)
+*   **Codolio:** [https://codolio.com/profile/adocxwork](https://codolio.com/profile/adocxwork)
+*   **GeeksforGeeks:** [https://www.geeksforgeeks.org/user/adocxwork/](https://www.geeksforgeeks.org/user/adocxwork/)
+*   **CodeChef:** [https://www.codechef.com/users/adocxwork](https://www.codechef.com/users/adocxwork)
