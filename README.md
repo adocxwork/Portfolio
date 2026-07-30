@@ -1,33 +1,16 @@
-# Aditya Gupta | Portfolio
+# React + Vite
 
-This is a modern, responsive single-page portfolio website for Aditya Gupta, a passionate and hardworking college student. This project showcases his skills, projects, and achievements in the field of computer science.
+This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
-## Features
+Currently, two official plugins are available:
 
-*   **Single-Page Layout:** All the information is presented on a single page for easy navigation.
-*   **Responsive Design:** The website is fully responsive and works on all devices, from desktops to mobile phones.
-*   **Interactive UI:** The website has a clean and modern UI with interactive elements and animations.
-*   **Smooth Scrolling:** Smooth scrolling is implemented for a better user experience.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## Technologies Used
+## React Compiler
 
-*   HTML5
-*   CSS3
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## How to View
+## Expanding the Oxlint configuration
 
-The website is hosted on GitHub Pages. You can view it here: [https://adocxwork.github.io/Portfolio/](https://adocxwork.github.io/Portfolio/)
-
-## Contact & Profiles
-
-*   **Email:** [adityagupta.ac@gmail.com](mailto:adityagupta.ac@gmail.com)
-*   **LinkedIn:** [https://www.linkedin.com/in/adocxwork/](https://www.linkedin.com/in/adocxwork/)
-*   **GitHub:** [https://github.com/adocxwork](https://github.com/adocxwork)
-*   **Portfolio:** [https://adocxwork.github.io/Portfolio/](https://adocxwork.github.io/Portfolio/)
-*   **X (Twitter):** [https://x.com/adocxwork](https://x.com/adocxwork)
-
-### Competitive Programming
-*   **LeetCode:** [https://leetcode.com/u/adocxwork](https://leetcode.com/u/adocxwork)
-*   **Codolio:** [https://codolio.com/profile/adocxwork](https://codolio.com/profile/adocxwork)
-*   **GeeksforGeeks:** [https://www.geeksforgeeks.org/user/adocxwork/](https://www.geeksforgeeks.org/user/adocxwork/)
-*   **CodeChef:** [https://www.codechef.com/users/adocxwork](https://www.codechef.com/users/adocxwork)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
