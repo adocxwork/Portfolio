@@ -6,8 +6,8 @@ I build robust, high-performance backend systems with a focus on clean code and 
 This repository hosts the source code for my personal portfolio website.
 
 ## 🚀 Quick Stats
-- **LeetCode:** Knight (1878 Rating) | Top 5.2% Globally
-- **Problems Solved:** 423+
+- **LeetCode:** Knight (1916 Rating) | Top 4.23% Globally
+- **Problems Solved:** 458+
 - **Languages:** Java, Golang, Python
 - **Technologies:** Spring Boot, PostgreSQL, MongoDB, REST APIs, Microservices
 
