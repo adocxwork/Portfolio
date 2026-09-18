@@ -71,31 +71,35 @@
                         </div>
                         
                         <p class="featured-description">
-                            A production-deployed, high-performance platform engineered for scale. Built with Java 21 and Spring Boot 3, utilizing secure stateless JWT authentication and ORM-driven PostgreSQL persistence.
+                            A production-grade, high-throughput platform engineered for scale. Built with Java 21 and Spring Boot 3, it is specifically designed to handle massive traffic spikes with zero-latency redirects while processing heavy analytics in the background.
                         </p>
                         
                         <div class="feature-highlights">
                             <div class="feature-item">
-                                <h4><i class="fas fa-globe"></i> Advanced Geo-Tracking</h4>
-                                <p>Ingests raw HTTP headers & IPs through an external Geo-IP API and User-Agent parser to instantly aggregate global traffic by Country, Device, and Browser into a real-time Recharts dashboard.</p>
+                                <h4><i class="fas fa-server"></i> High-Throughput & Redis Streams</h4>
+                                <p>Engineered to handle viral traffic loads by offloading heavy database writes. Uses <strong>Redis Streams</strong> for asynchronous event processing, ensuring near-zero latency for link redirects even under extreme load.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-bolt"></i> 24/7 High Availability</h4>
-                                <p>System actively self-pings to prevent serverless cold-starts on cloud hosting, guaranteeing instant responsiveness and platform stability for global users.</p>
+                                <h4><i class="fas fa-shield-alt"></i> Celebrity Security Radius & RBAC</h4>
+                                <p>Implements enterprise-grade security including a <strong>"Celebrity Security Radius"</strong> with advanced rate-limiting and stateless JWT auth to protect high-profile accounts from DDoS and abuse, managed via a strict RBAC admin center.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-layer-group"></i> Premium Full-Stack UI</h4>
-                                <p>Clean, glassmorphism-inspired public profile UI built with React 18 & Framer Motion. Features fluid drag-and-drop link reordering using @hello-pangea/dnd and a dedicated RBAC command center.</p>
+                                <h4><i class="fas fa-chart-network"></i> Real-Time Data Engineering</h4>
+                                <p>Ingests raw HTTP headers & IPs via a custom User-Agent parser and Geo-IP API. Aggregates global traffic (Country, Device, Browser) in real-time to feed a highly responsive analytical dashboard.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-bolt"></i> 24/7 Zero-Cold-Start Reliability</h4>
+                                <p>Architected with an active self-pinging mechanism to completely bypass serverless cold-starts on cloud infrastructure, guaranteeing continuous 99.9% uptime and instantaneous responsiveness globally.</p>
                             </div>
                         </div>
 
                         <div class="project-tech mt-4">
                             <span class="tag">Java 21</span>
                             <span class="tag">Spring Boot 3</span>
+                            <span class="tag">Redis Streams</span>
                             <span class="tag">PostgreSQL</span>
+                            <span class="tag">System Design</span>
                             <span class="tag">React 18</span>
-                            <span class="tag">Framer Motion</span>
-                            <span class="tag">Recharts</span>
                         </div>
                     </div>
                 </div>
