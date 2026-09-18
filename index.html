@@ -56,27 +56,52 @@
                     <p class="section-desc">Production-grade systems and open-source tooling.</p>
                 </div>
                 
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="card project-card">
-                        <div class="project-header">
-                            <h3>Linkly</h3>
+                <!-- Featured Project: Linkly -->
+                <div class="card featured-project">
+                    <div class="featured-content">
+                        <div class="featured-header">
+                            <div>
+                                <h3 class="featured-title">Linkly</h3>
+                                <p class="project-subtitle">Flagship Full-Stack Bio-Link & Analytics Platform</p>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/adocxwork/linkly" target="_blank"><i class="fab fa-github"></i></a>
                                 <a href="https://linkly-plum.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <p class="project-subtitle">Full-Stack Bio-Link Platform</p>
-                        <p class="project-description">
-                            A production-deployed platform with advanced Geo-Tracking, Device Fingerprinting, drag-and-drop link reordering, and a Role-Based Access Control (RBAC) center. Features a glassmorphism UI built with React 18 & Framer Motion.
+                        
+                        <p class="featured-description">
+                            A production-deployed, high-performance platform engineered for scale. Built with Java 21 and Spring Boot 3, utilizing secure stateless JWT authentication and ORM-driven PostgreSQL persistence.
                         </p>
-                        <div class="project-tech">
+                        
+                        <div class="feature-highlights">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-globe"></i> Advanced Geo-Tracking</h4>
+                                <p>Ingests raw HTTP headers & IPs through an external Geo-IP API and User-Agent parser to instantly aggregate global traffic by Country, Device, and Browser into a real-time Recharts dashboard.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-bolt"></i> 24/7 High Availability</h4>
+                                <p>System actively self-pings to prevent serverless cold-starts on cloud hosting, guaranteeing instant responsiveness and platform stability for global users.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-layer-group"></i> Premium Full-Stack UI</h4>
+                                <p>Clean, glassmorphism-inspired public profile UI built with React 18 & Framer Motion. Features fluid drag-and-drop link reordering using @hello-pangea/dnd and a dedicated RBAC command center.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech mt-4">
                             <span class="tag">Java 21</span>
                             <span class="tag">Spring Boot 3</span>
                             <span class="tag">PostgreSQL</span>
                             <span class="tag">React 18</span>
+                            <span class="tag">Framer Motion</span>
+                            <span class="tag">Recharts</span>
                         </div>
                     </div>
+                </div>
+
+                <h3 class="other-projects-title">Other Notable Projects</h3>
+                <div class="projects-grid">
 
                     <!-- Project 2 -->
                     <div class="card project-card">
