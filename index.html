@@ -104,47 +104,100 @@
                     </div>
                 </div>
 
-                <h3 class="other-projects-title">Other Notable Projects</h3>
-                <div class="projects-grid">
-                    <!-- Project 2: Resilient Checkout API -->
-                    <div class="card project-card">
-                        <div class="project-header">
-                            <h3>Resilient Checkout API</h3>
+                <!-- Featured Project 2: Resilient Checkout API -->
+                <div class="card featured-project">
+                    <div class="featured-content">
+                        <div class="featured-header">
+                            <div>
+                                <h3 class="featured-title">Resilient Checkout API</h3>
+                                <p class="project-subtitle">Fault-Tolerant Distributed Checkout Engine</p>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/adocxwork/resilient-checkout-api" target="_blank"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                        <p class="project-subtitle">Fault-Tolerant Distributed Checkout Engine</p>
-                        <p class="project-description">
-                            Engineered to solve distributed e-commerce challenges. Defends against duplicate billing using Idempotency Keys, prevents overselling via Pessimistic Locking, and uses Resilience4j circuit breakers to handle external outages.
+                        
+                        <p class="featured-description">
+                            An order processing API engineered to systematically solve critical distributed e-commerce challenges during concurrent checkout operations. Built with Spring Boot and PostgreSQL to defend against double billing and inventory overselling.
                         </p>
-                        <div class="project-tech">
+                        
+                        <div class="feature-highlights">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-lock"></i> Pessimistic Locking</h4>
+                                <p>Executes SELECT FOR UPDATE queries during inventory deduction to serialize concurrent requests, mathematically guaranteeing stock is never oversold during high-concurrency race conditions.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-shield-virus"></i> Idempotent Operations</h4>
+                                <p>Strictly enforces unique Idempotency-Key headers backed by database constraints to safely reject duplicate requests at the disk level, preventing double-charging during network retries.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-plug"></i> Circuit Breaker Pattern</h4>
+                                <p>Wraps external payment gateway calls with <strong>Resilience4j</strong>. Dynamically trips the circuit OPEN during outages to instantly "fail fast", protecting server memory from cascading thread exhaustion.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-sync"></i> Automated Reconciliation</h4>
+                                <p>Decouples local database transactions from external calls. A background cron job sweeps for stuck orders and self-heals the database state based on source-of-truth from the payment gateway.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech mt-4">
                             <span class="tag">Java 21</span>
                             <span class="tag">Spring Boot 3.3</span>
                             <span class="tag">PostgreSQL 15</span>
                             <span class="tag">Resilience4j</span>
+                            <span class="tag">System Design</span>
                             <span class="tag">JUnit 5</span>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Project 3 -->
-                    <div class="card project-card">
-                        <div class="project-header">
-                            <h3>MiniGit (mgit)</h3>
+                <!-- Featured Project 3: MiniGit (mgit) -->
+                <div class="card featured-project">
+                    <div class="featured-content">
+                        <div class="featured-header">
+                            <div>
+                                <h3 class="featured-title">MiniGit (mgit)</h3>
+                                <p class="project-subtitle">Custom Version Control System built from scratch</p>
+                            </div>
                             <div class="project-links">
                                 <a href="https://github.com/adocxwork/minigit" target="_blank"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                        <p class="project-subtitle">Custom Version Control System</p>
-                        <p class="project-description">
-                            A VCS built from scratch in Go implementing core Git internals. Supports content-addressable storage, branching, resets, and an intelligent three-way merge algorithm.
+                        
+                        <p class="featured-description">
+                            A version control system engineered in Go that completely recreates core Git internals. Features content-addressable storage, snapshot committing, and a highly complex three-way branching/merging algorithm.
                         </p>
-                        <div class="project-tech">
-                            <span class="tag">Go</span>
+                        
+                        <div class="feature-highlights">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-code-branch"></i> Three-Way Merge Engine</h4>
+                                <p>Implemented an intelligent three-way merge algorithm that automatically locates the lowest common ancestor between branches and merges disjoint changes exactly like standard Git.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Conflict Detection</h4>
+                                <p>Engineered full merge-conflict detection that halts the merge state, generates standard standard conflict markers (<<< === >>>), and locks the repository into a resolvable state.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-database"></i> Content-Addressable Storage</h4>
+                                <p>Replicates Git's internal object model, hashing file contents into secure blobs and building a verifiable tree of cryptographic hashes for complete history immutability.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-desktop"></i> Real-Time Embedded GUI</h4>
+                                <p>Includes an integrated, zero-dependency local Web GUI built with React. Embedded directly into the compiled Go binary, it reactively polls for filesystem changes to reflect CLI actions in real time.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech mt-4">
+                            <span class="tag">Go (Golang)</span>
                             <span class="tag">React</span>
-                            <span class="tag">System Design</span>
+                            <span class="tag">VCS Internals</span>
+                            <span class="tag">Cryptographic Hashing</span>
                         </div>
                     </div>
+                </div>
+
+                <h3 class="other-projects-title">Other Notable Projects</h3>
+                <div class="projects-grid">
 
                     <!-- Project 3 -->
                     <div class="card project-card">
