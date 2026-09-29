@@ -62,7 +62,7 @@
                         <div class="featured-header">
                             <div>
                                 <h3 class="featured-title">Linkly</h3>
-                                <p class="project-subtitle">Flagship Full-Stack Bio-Link & Analytics Platform</p>
+                                <p class="project-subtitle">Enterprise-Grade Creator Identity & Analytics Platform</p>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/adocxwork/linkly" target="_blank"><i class="fab fa-github"></i></a>
@@ -71,25 +71,25 @@
                         </div>
                         
                         <p class="featured-description">
-                            A production-grade, high-throughput platform engineered for scale. Built with Java 21 and Spring Boot 3, it is specifically designed to handle massive traffic spikes with zero-latency redirects while processing heavy analytics in the background.
+                            Engineered from the ground up to survive unpredictable viral traffic surges. Moves beyond traditional CRUD boundaries by utilizing an event-driven architecture that decouples heavy analytics writes from the critical read-path, ensuring sub-millisecond latencies.
                         </p>
                         
                         <div class="feature-highlights">
                             <div class="feature-item">
-                                <h4><i class="fas fa-server"></i> High-Throughput & Redis Streams</h4>
-                                <p>Engineered to handle viral traffic loads by offloading heavy database writes. Uses <strong>Redis Streams</strong> for asynchronous event processing, ensuring near-zero latency for link redirects even under extreme load.</p>
+                                <h4><i class="fas fa-server"></i> Event-Driven Analytics via Redis Streams</h4>
+                                <p>To prevent database locking during traffic spikes, click events are instantly published to <strong>Redis Streams</strong>. A background consumer asynchronously processes heavy IP-geolocation lookups and batch-inserts them into PostgreSQL.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-shield-alt"></i> Celebrity Security Radius & RBAC</h4>
-                                <p>Implements enterprise-grade security including a <strong>"Celebrity Security Radius"</strong> with advanced rate-limiting and stateless JWT auth to protect high-profile accounts from DDoS and abuse, managed via a strict RBAC admin center.</p>
+                                <h4><i class="fas fa-bolt"></i> High-Availability Cache Fallbacks</h4>
+                                <p>Extensively leverages <strong>Upstash Redis</strong> for sub-millisecond RAM reads with <code>@CacheEvict</code> invalidation. Implements robust circuit-breaker fallbacks to PostgreSQL if the Redis cluster drops, ensuring true high-availability.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-chart-network"></i> Real-Time Data Engineering</h4>
-                                <p>Ingests raw HTTP headers & IPs via a custom User-Agent parser and Geo-IP API. Aggregates global traffic (Country, Device, Browser) in real-time to feed a highly responsive analytical dashboard.</p>
+                                <h4><i class="fas fa-shield-alt"></i> Cross-Origin Security & Rate Limiting</h4>
+                                <p>Secured via stateless JWTs immune to XSS via <code>HttpOnly</code>, <code>SameSite=Lax</code> cookies. Employs <strong>Bucket4j</strong> for dynamic IP-based Rate Limiting to drop malicious requests in <code><1ms</code> and mitigate DDoS attacks.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-bolt"></i> 24/7 Zero-Cold-Start Reliability</h4>
-                                <p>Architected with an active self-pinging mechanism to completely bypass serverless cold-starts on cloud infrastructure, guaranteeing continuous 99.9% uptime and instantaneous responsiveness globally.</p>
+                                <h4><i class="fas fa-heartbeat"></i> Automated Observability & Keep-Alive</h4>
+                                <p>Features a custom distributed Keep-Alive system via <code>@Scheduled</code> tasks to prevent serverless cold-starts. Fortified by <strong>Spring Boot Actuator</strong> for live health metrics and strictly tested via JUnit 5 & Mockito.</p>
                             </div>
                         </div>
 
@@ -98,7 +98,7 @@
                             <span class="tag">Spring Boot 3</span>
                             <span class="tag">Redis Streams</span>
                             <span class="tag">PostgreSQL</span>
-                            <span class="tag">System Design</span>
+                            <span class="tag">Bucket4j</span>
                             <span class="tag">React 18</span>
                         </div>
                     </div>
@@ -118,25 +118,25 @@
                         </div>
                         
                         <p class="featured-description">
-                            An order processing API engineered to systematically solve critical distributed e-commerce challenges during concurrent checkout operations. Built with Spring Boot and PostgreSQL to defend against double billing and inventory overselling.
+                            A battle-tested order processing API engineered to systematically solve four major industry failure scenarios: The Double Charge, The Race Condition (overselling), The Gateway Outage, and The Partial Failure.
                         </p>
                         
                         <div class="feature-highlights">
                             <div class="feature-item">
-                                <h4><i class="fas fa-lock"></i> Pessimistic Locking</h4>
-                                <p>Executes SELECT FOR UPDATE queries during inventory deduction to serialize concurrent requests, mathematically guaranteeing stock is never oversold during high-concurrency race conditions.</p>
+                                <h4><i class="fas fa-shield-virus"></i> Idempotency (The Double Charge)</h4>
+                                <p>Strictly enforces unique <code>Idempotency-Key</code> headers backed by PostgreSQL <code>UNIQUE</code> constraints. Safely rejects duplicate requests at the disk level to prevent double-charging impatient users during network retries.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-shield-virus"></i> Idempotent Operations</h4>
-                                <p>Strictly enforces unique Idempotency-Key headers backed by database constraints to safely reject duplicate requests at the disk level, preventing double-charging during network retries.</p>
+                                <h4><i class="fas fa-lock"></i> Pessimistic Locking (The Race Condition)</h4>
+                                <p>Executes <code>SELECT ... FOR UPDATE</code> queries during inventory deduction to serialize concurrent requests, mathematically guaranteeing stock is never oversold during high-concurrency race conditions.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-plug"></i> Circuit Breaker Pattern</h4>
-                                <p>Wraps external payment gateway calls with <strong>Resilience4j</strong>. Dynamically trips the circuit OPEN during outages to instantly "fail fast", protecting server memory from cascading thread exhaustion.</p>
+                                <h4><i class="fas fa-plug"></i> Circuit Breakers (The Gateway Outage)</h4>
+                                <p>Wraps external payment gateway calls with <strong>Resilience4j</strong>. Dynamically trips the circuit OPEN during outages to instantly "fail fast", protecting the Tomcat thread pool from cascading exhaustion.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-sync"></i> Automated Reconciliation</h4>
-                                <p>Decouples local database transactions from external calls. A background cron job sweeps for stuck orders and self-heals the database state based on source-of-truth from the payment gateway.</p>
+                                <h4><i class="fas fa-sync"></i> State Machine & Reconciliation (Partial Failure)</h4>
+                                <p>Decouples local database transactions from external network calls. A background cron job sweeps for stuck <code>PAYMENT_PENDING</code> orders and self-heals the database state based on gateway truth.</p>
                             </div>
                         </div>
 
@@ -145,8 +145,8 @@
                             <span class="tag">Spring Boot 3.3</span>
                             <span class="tag">PostgreSQL 15</span>
                             <span class="tag">Resilience4j</span>
-                            <span class="tag">System Design</span>
-                            <span class="tag">JUnit 5</span>
+                            <span class="tag">Idempotency</span>
+                            <span class="tag">Distributed Systems</span>
                         </div>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                         <div class="featured-header">
                             <div>
                                 <h3 class="featured-title">MiniGit (mgit)</h3>
-                                <p class="project-subtitle">Custom Version Control System built from scratch</p>
+                                <p class="project-subtitle">Educational Version Control System Built From Scratch</p>
                             </div>
                             <div class="project-links">
                                 <a href="https://github.com/adocxwork/minigit" target="_blank"><i class="fab fa-github"></i></a>
@@ -165,25 +165,25 @@
                         </div>
                         
                         <p class="featured-description">
-                            A version control system engineered in Go that completely recreates core Git internals. Features content-addressable storage, snapshot committing, and a highly complex three-way branching/merging algorithm.
+                            A miniature, fully functional version control system built entirely in Go. Designed to demonstrate the core architectural concepts behind tools like Git, featuring content-addressable storage, tree-based histories, and a 3-way merge algorithm.
                         </p>
                         
                         <div class="feature-highlights">
                             <div class="feature-item">
-                                <h4><i class="fas fa-code-branch"></i> Three-Way Merge Engine</h4>
-                                <p>Implemented an intelligent three-way merge algorithm that automatically locates the lowest common ancestor between branches and merges disjoint changes exactly like standard Git.</p>
-                            </div>
-                            <div class="feature-item">
-                                <h4><i class="fas fa-exclamation-triangle"></i> Conflict Detection</h4>
-                                <p>Engineered full merge-conflict detection that halts the merge state, generates standard standard conflict markers (<<< === >>>), and locks the repository into a resolvable state.</p>
-                            </div>
-                            <div class="feature-item">
                                 <h4><i class="fas fa-database"></i> Content-Addressable Storage</h4>
-                                <p>Replicates Git's internal object model, hashing file contents into secure blobs and building a verifiable tree of cryptographic hashes for complete history immutability.</p>
+                                <p>Replicates Git's internal object model by hashing file contents (SHA-1) into immutable blobs. Builds a verifiable directed acyclic graph (DAG) of cryptographic hashes for complete history tracking.</p>
                             </div>
                             <div class="feature-item">
-                                <h4><i class="fas fa-desktop"></i> Real-Time Embedded GUI</h4>
-                                <p>Includes an integrated, zero-dependency local Web GUI built with React. Embedded directly into the compiled Go binary, it reactively polls for filesystem changes to reflect CLI actions in real time.</p>
+                                <h4><i class="fas fa-code-branch"></i> Intelligent 3-Way Merge</h4>
+                                <p>Running a merge command automatically locates the lowest common ancestor between branches and attempts a clean 3-way merge of disjoint changes, closely mirroring real Git internals.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Conflict Resolution & Resets</h4>
+                                <p>Halts merges upon detecting conflicts, generates standard conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>), and implements a full reset subsystem (<code>--soft</code>, <code>--mixed</code>, <code>--hard</code>) to rewrite history.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-desktop"></i> Reactive Embedded Web GUI</h4>
+                                <p>Features a zero-dependency React frontend compiled and <strong>embedded</strong> directly into the Go binary via <code>//go:embed</code>. The UI reactively polls the filesystem to reflect CLI actions in real-time.</p>
                             </div>
                         </div>
 
@@ -192,6 +192,7 @@
                             <span class="tag">React</span>
                             <span class="tag">VCS Internals</span>
                             <span class="tag">Cryptographic Hashing</span>
+                            <span class="tag">DAG Data Structures</span>
                         </div>
                     </div>
                 </div>
