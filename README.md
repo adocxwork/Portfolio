@@ -1,18 +1,26 @@
-# Aditya Gupta’s portfolio
+# Aditya Gupta | Backend Engineer
 
-A static portfolio for backend and software engineering roles, highlighting Java and Spring Boot APIs, PostgreSQL, Redis Streams, and Go developer tooling.
+I build backend services with Java, Spring Boot, and PostgreSQL, and developer tools in Go. I’m pursuing a B.Tech in Computer Science & Engineering at Jaypee University of Engineering and Technology, with graduation expected in May 2027.
 
-- [Portfolio](https://adocxwork.github.io/Portfolio/)
-- [GitHub](https://github.com/adocxwork)
-- [LinkedIn](https://www.linkedin.com/in/adocxwork/)
-- [Email](mailto:adityagupta.ac@gmail.com)
+This repository hosts the source code for my personal portfolio website.
 
-## Featured projects
+## 🚀 Quick Stats
+- **LeetCode:** Knight (1,916 Contest Rating) | Top 4.23% Globally
+- **Problems Solved:** 458+
+- **Languages:** Java, Go, Python
+- **Technologies:** Spring Boot, PostgreSQL, Redis Streams, REST APIs
 
-- [Linkly](https://github.com/adocxwork/linkly) uses Redis Streams and PostgreSQL to record clicks without counting replayed events twice.
-- [Resilient Checkout API](https://github.com/adocxwork/resilient-checkout-api) pairs retry-safe order creation with restart recovery for simulated payments.
-- [MiniGit](https://github.com/adocxwork/minigit) implements local version control in Go and embeds its React dashboard in the executable.
+## 📬 Contact & Links
+- **Email:** adityagupta.ac@gmail.com
+- **LinkedIn:** [in/adocxwork](https://www.linkedin.com/in/adocxwork/)
+- **X (Twitter):** [@adocxwork](https://x.com/adocxwork)
+- **Portfolio Website:** [https://adocxwork.github.io/Portfolio/](https://adocxwork.github.io/Portfolio/)
 
-## Preview locally
+## 👨‍💻 Coding Profiles
+- [LeetCode](https://leetcode.com/u/adocxwork)
+- [GeeksforGeeks](https://www.geeksforgeeks.org/user/adocxwork/)
+- [CodeChef](https://www.codechef.com/users/adocxwork)
+- [Codolio](https://codolio.com/profile/adocxwork)
 
-Run `python3 -m http.server 8000` from the repository root and open `http://localhost:8000`. The site has no build step. The project screenshots in `assets/` come from the Linkly and MiniGit repositories.
+---
+*Built with passion. Open for new opportunities and collaborations.*

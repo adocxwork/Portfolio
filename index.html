@@ -1,158 +1,492 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Aditya Gupta's backend engineering portfolio. Java and Spring Boot APIs, PostgreSQL, Redis Streams, and Go developer tools.">
-    <meta name="theme-color" content="#141514">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Aditya Gupta | Backend Software Engineer">
-    <meta property="og:description" content="Selected work in Java, Spring Boot, PostgreSQL, Redis, and Go.">
-    <meta property="og:url" content="https://adocxwork.github.io/Portfolio/">
-    <link rel="canonical" href="https://adocxwork.github.io/Portfolio/">
-    <title>Aditya Gupta | Backend Software Engineer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Gupta | Backend Engineer</title>
+    <meta name="description" content="Aditya Gupta’s portfolio of backend projects built with Java, Spring Boot, PostgreSQL, Redis Streams, and Go.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <a class="skip-link" href="#main">Skip to content</a>
-    <span id="new-tab-note" hidden>Opens in a new tab</span>
-
-    <header class="site-header">
-        <nav class="nav shell" aria-label="Main navigation">
-            <a class="brand" href="#hero">Aditya Gupta</a>
-            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-links" hidden>Menu</button>
-            <div class="nav-links" id="site-links">
-                <a href="#projects">Work</a>
-                <a href="#skills">Stack</a>
-                <a href="#background">About</a>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">AG.</a>
+            <div class="nav-links">
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Profiles</a>
+                <a href="#skills">Skills</a>
+                <a href="#background">Certifications</a>
                 <a href="#contact">Contact</a>
             </div>
-        </nav>
-    </header>
-
-    <main id="main" tabindex="-1">
-        <section class="hero shell" id="hero" aria-labelledby="hero-title">
-            <div>
-                <h1 id="hero-title">Aditya Gupta</h1>
-                <p class="hero-role">Backend software engineer</p>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
-            <div class="hero-intro">
-                <p>I build APIs and data pipelines with Java, Spring Boot, and PostgreSQL. My recent work covers replay-safe analytics and payment recovery.</p>
-                <div class="actions">
-                    <a class="button" href="#projects">View work</a>
-                    <a class="text-link" href="https://github.com/adocxwork" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">GitHub</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="shell section" id="projects" tabindex="-1" aria-labelledby="projects-title">
-            <h2 id="projects-title" class="section-title">Selected work</h2>
-            <article class="feature" id="linkly">
-                <div class="feature-copy">
-                    <h3>Linkly</h3>
-                    <p class="project-intro">URL shortener and click analytics</p>
-                    <p>Redirects resolve from PostgreSQL while Redis Streams queues clicks in the background. Replayed events leave click totals unchanged.</p>
-                    <p class="project-stack">Java 21 · Spring Boot · Redis Streams · PostgreSQL</p>
-                    <div class="actions">
-                        <a class="text-link" href="https://linkly-plum.vercel.app/p/adocxwork" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Live profile</a>
-                        <a class="text-link" href="https://github.com/adocxwork/linkly" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note" aria-label="Linkly source code">Source code</a>
-                    </div>
-                </div>
-                <figure class="project-figure">
-                    <a href="assets/linkly-analytics.png" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note" aria-label="View the full Linkly analytics screenshot">
-                        <img src="assets/linkly-analytics.png" width="1280" height="900" decoding="async" alt="Linkly dashboard showing click history and a breakdown by country, device, and browser">
-                    </a>
-                    <figcaption>Linkly dashboard · Sample data</figcaption>
-                </figure>
-            </article>
-
-            <div class="project-pair">
-                <article id="checkout">
-                    <h3>Resilient Checkout API</h3>
-                    <p>A checkout service that handles repeat requests and concurrent stock reservations. In a restart test, its worker recovered a simulated payment using the original reference.</p>
-                    <p class="project-stack">Java 21 · Spring Boot · PostgreSQL · Resilience4j</p>
-                    <div class="actions">
-                        <a class="text-link" href="https://github.com/adocxwork/resilient-checkout-api/blob/main/docs/architecture.md" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Architecture</a>
-                        <a class="text-link" href="https://github.com/adocxwork/resilient-checkout-api" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note" aria-label="Resilient Checkout API source code">Source code</a>
-                    </div>
-                </article>
-                <article id="minigit">
-                    <h3>MiniGit</h3>
-                    <p>A local version-control system with content-addressed snapshots and file-level three-way merges. The CLI and the embedded browser dashboard use the same Go engine.</p>
-                    <p class="project-stack">Go · Cobra · React · TypeScript</p>
-                    <div class="actions">
-                        <a class="text-link" href="assets/minigit-dashboard.png" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Dashboard preview</a>
-                        <a class="text-link" href="https://github.com/adocxwork/minigit" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note" aria-label="MiniGit source code">Source code</a>
-                    </div>
-                </article>
-            </div>
-
-            <section class="other-projects" aria-labelledby="other-title">
-                <h2 id="other-title" class="section-title">Other notable projects</h2>
-                <ol class="project-list">
-                    <li>
-                        <a class="text-link" href="https://github.com/adocxwork/Flock" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Flock</a>
-                        <p>Spring Boot API that normalizes and indexes 403 smart meters for geospatial queries.</p>
-                    </li>
-                    <li>
-                        <a class="text-link" href="https://github.com/adocxwork/Schedulo" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Schedulo</a>
-                        <p>Scheduling app with time-zone-aware availability and PostgreSQL booking constraints.</p>
-                    </li>
-                    <li>
-                        <a class="text-link" href="https://github.com/adocxwork/Auto_Mind" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Auto_Mind</a>
-                        <p>Flask marketplace with buyer–seller messaging and a vehicle-price estimator.</p>
-                    </li>
-                    <li>
-                        <a class="text-link" href="https://github.com/adocxwork/MentalHealthSupport" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Mental Health Support</a>
-                        <p>Appointment booking and clinician–patient messaging prototype.</p>
-                    </li>
-                    <li>
-                        <a class="text-link" href="https://github.com/adocxwork/Snip" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Snip</a>
-                        <p>Go URL shortener with a minimal HTTP API and an in-memory store.</p>
-                    </li>
-                </ol>
-            </section>
-        </section>
-
-        <div class="shell profile-grid">
-            <section id="skills" tabindex="-1" aria-labelledby="skills-title">
-                <h2 id="skills-title" class="section-title">Technical stack</h2>
-                <dl class="stack-list">
-                    <div><dt>Languages</dt><dd>Java, Go, Python</dd></div>
-                    <div><dt>Backend</dt><dd>Spring Boot, Spring Security, Spring Data JPA, Hibernate, REST, OpenAPI, Resilience4j</dd></div>
-                    <div><dt>Data</dt><dd>PostgreSQL, MySQL, MongoDB, Redis Streams</dd></div>
-                    <div><dt>Testing &amp; delivery</dt><dd>JUnit 5, Mockito, Docker Compose, Flyway, GitHub Actions</dd></div>
-                </dl>
-            </section>
-            <section id="background" tabindex="-1" aria-labelledby="background-title">
-                <h2 id="background-title" class="section-title">About</h2>
-                <p class="education-title">B.Tech, Computer Science &amp; Engineering</p>
-                <p>Jaypee University of Engineering and Technology</p>
-                <p class="education-date">Expected May 2027</p>
-                <p id="achievements"><a class="text-link" href="https://leetcode.com/u/adocxwork/" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">LeetCode Knight</a> · 1,916 contest rating</p>
-            </section>
         </div>
+    </nav>
 
-        <section class="shell contact" id="contact" tabindex="-1" aria-labelledby="contact-title">
-            <div>
-                <h2 id="contact-title" class="section-title">Get in touch</h2>
-                <p>Open to backend and software engineering roles.</p>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="anim-text">Aditya Gupta</span>
+                </h1>
+                <h2 class="hero-subtitle">
+                    <div class="line-wrap"><span class="anim-text delay-1">Backend software engineer building APIs</span></div>
+                    <div class="line-wrap"><span class="anim-text delay-2">with Java, Spring Boot, and PostgreSQL.</span></div>
+                </h2>
+                <div class="hero-cta anim-fade delay-3">
+                    <a href="#projects" class="btn btn-primary">View Projects</a>
+                    <a href="https://github.com/adocxwork" target="_blank" class="btn btn-secondary"><i class="fab fa-github"></i> GitHub</a>
+                </div>
             </div>
-            <div class="actions contact-links">
-                <a class="text-link" href="mailto:adityagupta.ac@gmail.com">adityagupta.ac@gmail.com</a>
-                <a class="text-link" href="https://www.linkedin.com/in/adocxwork/" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">LinkedIn</a>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-container reveal">
+                <div class="section-header">
+                    <h2 class="section-title">Selected Work</h2>
+                    <p class="section-desc">Java and Spring Boot services, event-driven analytics, and Go developer tools.</p>
+                </div>
+                
+                <!-- Featured Project: Linkly -->
+                <div class="card featured-project">
+                    <div class="featured-content">
+                        <div class="featured-header">
+                            <div>
+                                <h3 class="featured-title">Linkly</h3>
+                                <p class="project-subtitle">URL Shortener &amp; Click Analytics</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/linkly" target="_blank"><i class="fab fa-github"></i></a>
+                                <a href="https://linkly-plum.vercel.app/" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        
+                        <p class="featured-description">
+                            A link-in-bio platform with custom short URLs and a dashboard for click analytics. The Spring Boot API resolves redirects from PostgreSQL and processes click events in the background.
+                        </p>
+                        
+                        <div class="feature-highlights">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-server"></i> Replay-Safe Click Analytics</h4>
+                                <p>A worker consumes clicks from <strong>Redis Streams</strong> and records the event and counter update in one PostgreSQL transaction. It acknowledges the event after commit, so replayed clicks leave totals unchanged.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-bolt"></i> Redis Outage Handling</h4>
+                                <p>Redirects use an indexed PostgreSQL lookup. A circuit breaker routes click events to a bounded in-memory queue during temporary Redis outages.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-shield-alt"></i> Account Isolation &amp; Revocable Sessions</h4>
+                                <p>Spring Security scopes private data to the authenticated account ID. Password changes, account suspension, and global sign-out revoke existing JWTs.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-heartbeat"></i> Backend Verification</h4>
+                                <p><strong>68 backend tests passed</strong> at the documented revision, covering migrations, redirects, account isolation, and duplicate-event replay.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech mt-4">
+                            <span class="tag">Java 21</span>
+                            <span class="tag">Spring Boot 4.1</span>
+                            <span class="tag">Redis Streams</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Flyway</span>
+                            <span class="tag">React 19</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Project 2: Resilient Checkout API -->
+                <div class="card featured-project">
+                    <div class="featured-content">
+                        <div class="featured-header">
+                            <div>
+                                <h3 class="featured-title">Resilient Checkout API</h3>
+                                <p class="project-subtitle">Checkout API with Payment Recovery</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/resilient-checkout-api" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        
+                        <p class="featured-description">
+                            A Spring Boot service that reserves stock in PostgreSQL and recovers uncertain simulated payments. Its 14 passing tests include 11 PostgreSQL integration tests.
+                        </p>
+                        
+                        <div class="feature-highlights">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-shield-virus"></i> Customer-Scoped Idempotency</h4>
+                                <p>A repeated <code>Idempotency-Key</code> with the same purchase details returns the existing order. Reusing the key with different details returns <code>409 Conflict</code>.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-lock"></i> Concurrent Inventory Reservations</h4>
+                                <p>PostgreSQL row locks protect stock during concurrent orders. Inventory deduction and creation of the pending order commit in a single transaction.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-plug"></i> Independent Circuit Breakers</h4>
+                                <p><strong>Resilience4j</strong> uses separate breakers for simulated payment submission and lookup, so the worker can still look up an outcome when the submission breaker is open.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-sync"></i> Payment Recovery After Restart</h4>
+                                <p>In a Docker Compose test, the worker settled a pending order after the API restarted, using the original payment reference from a durable PostgreSQL ledger.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech mt-4">
+                            <span class="tag">Java 21</span>
+                            <span class="tag">Spring Boot 4.1</span>
+                            <span class="tag">PostgreSQL 15</span>
+                            <span class="tag">Resilience4j</span>
+                            <span class="tag">Idempotency</span>
+                            <span class="tag">Docker Compose</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Project 3: MiniGit (mgit) -->
+                <div class="card featured-project">
+                    <div class="featured-content">
+                        <div class="featured-header">
+                            <div>
+                                <h3 class="featured-title">MiniGit (mgit)</h3>
+                                <p class="project-subtitle">Local Version Control in Go</p>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/minigit" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        
+                        <p class="featured-description">
+                            A version-control tool that tracks folders, stages snapshots, and merges branches. The Go CLI and React dashboard share the same repository engine.
+                        </p>
+                        
+                        <div class="feature-highlights">
+                            <div class="feature-item">
+                                <h4><i class="fas fa-database"></i> Content-Addressable Storage</h4>
+                                <p>File contents are stored by hash, so identical contents can share a blob across paths and commits. Each commit records a snapshot and its parent commit IDs.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-code-branch"></i> File-Level Three-Way Merge</h4>
+                                <p>The engine fast-forwards when possible. For divergent branches, it compares both snapshots with their common base and flags conflicting changes to the same file.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-exclamation-triangle"></i> Guarded Working-Tree Updates</h4>
+                                <p>Checkout detects collisions with untracked files, validates incoming blobs, and keeps backups so ordinary filesystem errors can be rolled back.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4><i class="fas fa-desktop"></i> Embedded Dashboard</h4>
+                                <p>The Go executable embeds the React and TypeScript dashboard for staging, branches, and searchable commit history. The engine and HTTP API have 13 Go tests.</p>
+                            </div>
+                        </div>
+
+                        <div class="project-tech mt-4">
+                            <span class="tag">Go</span>
+                            <span class="tag">React</span>
+                            <span class="tag">VCS Internals</span>
+                            <span class="tag">TypeScript</span>
+                            <span class="tag">GitHub Actions</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="other-projects-title">Other Notable Projects</h3>
+                <div class="projects-grid">
+
+                    <!-- Flock -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <h3>Flock</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/Flock" target="_blank" aria-label="Flock on GitHub"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-subtitle">Smart Meter Operations API</p>
+                        <p class="project-description">
+                            A Spring Boot API that normalizes two upstream data formats and indexes 403 smart meters for geospatial search and network hierarchy views.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tag">Java 21</span>
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">OpenAPI</span>
+                        </div>
+                    </div>
+
+                    <!-- Schedulo -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <h3>Schedulo</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/Schedulo" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-subtitle">Scheduling &amp; Booking</p>
+                        <p class="project-description">
+                            A scheduling app with configurable event types, time-zone-aware availability, and PostgreSQL constraints that prevent double-booking.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tag">Python</span>
+                            <span class="tag">FastAPI</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">React</span>
+                        </div>
+                    </div>
+
+                    <!-- Auto_Mind -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <h3>Auto_Mind</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/Auto_Mind" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-subtitle">Vehicle Marketplace &amp; Price Estimator</p>
+                        <p class="project-description">
+                            A Flask marketplace with role-based accounts, buyer–seller messaging, and a vehicle-price estimator built with scikit-learn.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">scikit-learn</span>
+                            <span class="tag">SQLite</span>
+                        </div>
+                    </div>
+
+                    <!-- Mental Health Support -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <h3>Mental Health Support App</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/MentalHealthSupport" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-subtitle">Appointment Booking &amp; Messaging</p>
+                        <p class="project-description">
+                            A Flask prototype for appointment booking and clinician–patient messaging, with a RoBERTa text classifier for emotion labels.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tag">Python</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">PyTorch</span>
+                            <span class="tag">Transformers</span>
+                        </div>
+                    </div>
+
+                    <!-- Snip -->
+                    <div class="card project-card">
+                        <div class="project-header">
+                            <h3>Snip</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/adocxwork/Snip" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <p class="project-subtitle">URL Shortener in Go</p>
+                        <p class="project-description">
+                            A small Go service with REST endpoints for creating short URLs and an in-memory store for redirect lookups.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tag">Go</span>
+                            <span class="tag">REST API</span>
+                            <span class="tag">In-Memory Storage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Coding Profiles Section -->
+        <section id="achievements" class="section">
+            <div class="section-container reveal">
+                <div class="section-header">
+                    <h2 class="section-title">Coding Profiles & Stats</h2>
+                    <p class="section-desc">Competitive programming results and public coding profiles.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="card stat-card">
+                        <div class="stat-value">1,916</div>
+                        <p class="stat-label">LeetCode Contest Rating · Knight</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-value">Top 4.23%</div>
+                        <p class="stat-label">LeetCode Global Contest Rank</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-value">458+</div>
+                        <p class="stat-label">LeetCode Problems Solved</p>
+                    </div>
+                    <div class="card stat-card">
+                        <div class="stat-value">2</div>
+                        <p class="stat-label">Hackathons · Flipkart GRiD and Adobe India</p>
+                    </div>
+                </div>
+                
+                <div class="card coding-profiles mt-4">
+                    <h3>Explore My Profiles</h3>
+                    <div class="profile-links">
+                        <a href="https://leetcode.com/u/adocxwork" target="_blank" class="profile-btn"><i class="fas fa-code"></i> LeetCode</a>
+                        <a href="https://www.geeksforgeeks.org/user/adocxwork/" target="_blank" class="profile-btn"><i class="fas fa-laptop"></i> GeeksforGeeks</a>
+                        <a href="https://www.codechef.com/users/adocxwork" target="_blank" class="profile-btn"><i class="fas fa-utensils"></i> CodeChef</a>
+                        <a href="https://codolio.com/profile/adocxwork" target="_blank" class="profile-btn"><i class="fas fa-chart-line"></i> Codolio</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="section-container reveal">
+                <div class="section-header">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-desc">Backend development, data, testing, and delivery.</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="card skill-category">
+                        <h3>Languages</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Java</span>
+                            <span class="tag">Go</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>Backend</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Spring Boot</span>
+                            <span class="tag">Spring Security</span>
+                            <span class="tag">Spring Data JPA</span>
+                            <span class="tag">Hibernate</span>
+                            <span class="tag">REST APIs</span>
+                            <span class="tag">JWT</span>
+                            <span class="tag">Resilience4j</span>
+                            <span class="tag">Bucket4j</span>
+                            <span class="tag">JUnit 5</span>
+                            <span class="tag">Mockito</span>
+                        </div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>Databases & Messaging</h3>
+                        <div class="skill-tags">
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Redis (Upstash)</span>
+                            <span class="tag">Redis Streams</span>
+                        </div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>Core CS</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Data Structures & Algorithms</span>
+                            <span class="tag">System Design</span>
+                            <span class="tag">OOP</span>
+                            <span class="tag">DBMS</span>
+                            <span class="tag">Operating Systems</span>
+                            <span class="tag">Computer Networks</span>
+                        </div>
+                    </div>
+                    <div class="card skill-category">
+                        <h3>Tools & Platforms</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Git</span>
+                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Docker Compose</span>
+                            <span class="tag">Flyway</span>
+                            <span class="tag">Swagger / OpenAPI</span>
+                            <span class="tag">Postman</span>
+                            <span class="tag">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Background Section -->
+        <section id="background" class="section">
+            <div class="section-container reveal">
+                <div class="section-header">
+                    <h2 class="section-title">Education & Certifications</h2>
+                    <p class="section-desc">Computer science degree and Java credentials.</p>
+                </div>
+                
+                <div class="about-grid">
+                    <div class="card certifications-card">
+                        <h3>Certifications</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>Java Developer Certification</h4>
+                                <p class="institution">Infosys Springboard</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Java SE 8 Features</h4>
+                                <p class="institution">Infosys Springboard</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card education-card">
+                        <h3>Education</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <h4>B.Tech — Computer Science & Engineering</h4>
+                                <p class="institution">Jaypee University of Engineering and Technology</p>
+                                <p class="duration">July 2023 – May 2027 (expected)</p>
+                            </div>
+                            <div class="timeline-item">
+                                <h4>Secondary & Higher Secondary</h4>
+                                <p class="institution">Shivbrat Singh Children Academy</p>
+                                <p class="duration">2019 – 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+            <div class="section-container reveal">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Let's Connect</h2>
+                    <p class="section-desc">Open to backend and software engineering roles, especially on Java and Spring Boot teams.</p>
+                </div>
+                
+                <div class="contact-grid">
+                    <a href="mailto:adityagupta.ac@gmail.com" class="card contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>adityagupta.ac@gmail.com</p>
+                    </a>
+                    <a href="https://www.linkedin.com/in/adocxwork/" target="_blank" class="card contact-card">
+                        <i class="fab fa-linkedin"></i>
+                        <h3>LinkedIn</h3>
+                        <p>in/adocxwork</p>
+                    </a>
+                    <a href="https://x.com/adocxwork" target="_blank" class="card contact-card">
+                        <!-- Custom SVG for X logo -->
+                        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 22.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"></path></svg>
+                        <h3>X (Twitter)</h3>
+                        <p>@adocxwork</p>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer shell">
-        <p>© Aditya Gupta</p>
-        <a class="text-link" href="https://github.com/adocxwork/Portfolio" target="_blank" rel="noopener noreferrer" aria-describedby="new-tab-note">Portfolio source</a>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Aditya Gupta.</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
