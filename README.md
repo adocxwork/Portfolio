@@ -1,27 +1,18 @@
-# Aditya Gupta | Backend Engineer
+# Aditya Gupta’s portfolio
 
-Backend Engineer specializing in Java, Spring Boot, and scalable system architecture. 
-I build robust, high-performance backend systems with a focus on clean code and complex problem-solving. Currently pursuing my B.Tech in Computer Science & Engineering.
+A static portfolio for backend and software engineering roles, highlighting Java and Spring Boot APIs, PostgreSQL, Redis Streams, and Go developer tooling.
 
-This repository hosts the source code for my personal portfolio website.
+- [Portfolio](https://adocxwork.github.io/Portfolio/)
+- [GitHub](https://github.com/adocxwork)
+- [LinkedIn](https://www.linkedin.com/in/adocxwork/)
+- [Email](mailto:adityagupta.ac@gmail.com)
 
-## 🚀 Quick Stats
-- **LeetCode:** Knight (1916 Rating) | Top 4.23% Globally
-- **Problems Solved:** 458+
-- **Languages:** Java, Golang, Python
-- **Technologies:** Spring Boot, PostgreSQL, MongoDB, REST APIs, Microservices
+## Featured projects
 
-## 📬 Contact & Links
-- **Email:** adityagupta.ac@gmail.com
-- **LinkedIn:** [in/adocxwork](https://www.linkedin.com/in/adocxwork/)
-- **X (Twitter):** [@adocxwork](https://x.com/adocxwork)
-- **Portfolio Website:** [https://adocxwork.github.io/Portfolio/](https://adocxwork.github.io/Portfolio/)
+- [Linkly](https://github.com/adocxwork/linkly) uses Redis Streams and PostgreSQL to record clicks without counting replayed events twice.
+- [Resilient Checkout API](https://github.com/adocxwork/resilient-checkout-api) pairs retry-safe order creation with restart recovery for simulated payments.
+- [MiniGit](https://github.com/adocxwork/minigit) implements local version control in Go and embeds its React dashboard in the executable.
 
-## 👨‍💻 Coding Profiles
-- [LeetCode](https://leetcode.com/u/adocxwork)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/user/adocxwork/)
-- [CodeChef](https://www.codechef.com/users/adocxwork)
-- [Codolio](https://codolio.com/profile/adocxwork)
+## Preview locally
 
----
-*Built with passion. Open for new opportunities and collaborations.*
+Run `python3 -m http.server 8000` from the repository root and open `http://localhost:8000`. The site has no build step. The project screenshots in `assets/` come from the Linkly and MiniGit repositories.
